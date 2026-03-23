@@ -1,4 +1,3 @@
-import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Coffee, MessageCircle } from "lucide-react";
 import { useTranslation } from "@/contexts/LanguageContext";
 
@@ -111,12 +110,11 @@ const menuData: MenuCategory[] = [
 
 const Carta = () => {
   const { t } = useTranslation();
-  const ref = useScrollReveal();
 
   return (
-    <section id="carta" className="section-padding bg-background" ref={ref}>
+    <section id="carta" className="section-padding bg-background">
       <div className="container-narrow">
-        <div className="text-center mb-14 fade-up">
+        <div className="text-center mb-14">
           <span className="text-cafe-olive text-sm font-semibold uppercase tracking-widest mb-3 block">
             Nuestra carta
           </span>
@@ -132,7 +130,7 @@ const Carta = () => {
           {menuData.map((cat, i) => (
             <div
               key={cat.titleKey}
-              className={`fade-up fade-up-delay-${i + 1} bg-card rounded-2xl p-6 sm:p-8 shadow-sm border border-border/50 hover:shadow-md transition-shadow duration-300`}
+              className="bg-card rounded-2xl p-6 sm:p-8 shadow-sm border border-border/50 hover:shadow-md transition-shadow duration-300"
             >
               <div className="flex items-center gap-3 mb-6">
                 <span className="text-2xl">{cat.icon}</span>
@@ -151,7 +149,7 @@ const Carta = () => {
         </div>
 
         {/* WhatsApp Order Section */}
-        <div className="mt-16 text-center fade-up">
+        <div className="mt-16 text-center">
           <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-950/20 rounded-2xl p-8 border border-green-200/50 dark:border-green-800/30">
             <div className="flex justify-center mb-4">
               <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center">
