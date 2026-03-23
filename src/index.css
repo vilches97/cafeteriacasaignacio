@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Lora';
+  src: url('./assets/fonts/Lora-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Lora';
+  src: url('./assets/fonts/Lora-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Lora';
+  src: url('./assets/fonts/Lora-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'WorkSans';
+  src: url('./assets/fonts/WorkSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'WorkSans';
+  src: url('./assets/fonts/WorkSans-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --background: 30 33% 96%;
+    --foreground: 0 0% 12%;
+
+    --card: 30 30% 97%;
+    --card-foreground: 0 0% 12%;
+
+    --popover: 30 30% 97%;
+    --popover-foreground: 0 0% 12%;
+
+    --primary: 10 28% 23%;
+    --primary-foreground: 30 33% 96%;
+
+    --secondary: 30 40% 92%;
+    --secondary-foreground: 10 28% 23%;
+
+    --muted: 30 20% 90%;
+    --muted-foreground: 20 8% 45%;
+
+    --accent: 90 20% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 30 20% 85%;
+    --input: 30 20% 85%;
+    --ring: 10 28% 23%;
+
+    --radius: 0.5rem;
+
+    --cafe-brown: 10 28% 23%;
+    --cafe-beige: 30 33% 96%;
+    --cafe-cream: 30 40% 92%;
+    --cafe-olive: 90 20% 45%;
+    --cafe-dark: 0 0% 12%;
+    --cafe-warm: 25 60% 94%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24;
+  }
+
+  .container-narrow {
+    @apply max-w-6xl mx-auto;
+  }
+}
+
+/* Scroll animations */
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-up-delay-1 { transition-delay: 80ms; }
+.fade-up-delay-2 { transition-delay: 160ms; }
+.fade-up-delay-3 { transition-delay: 240ms; }
+.fade-up-delay-4 { transition-delay: 320ms; }
+
+/* Image hover zoom */
+.img-zoom {
+  overflow: hidden;
+}
+.img-zoom img {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.img-zoom:hover img {
+  transform: scale(1.05);
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
