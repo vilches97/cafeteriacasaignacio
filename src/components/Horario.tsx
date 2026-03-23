@@ -11,10 +11,10 @@ const Horario = () => {
       <div className="container-narrow">
         <div className="text-center mb-14 fade-up">
           <span className="text-cafe-olive text-sm font-semibold uppercase tracking-widest mb-3 block">
-            {t('hours.find_us')}
+            Información de contacto
           </span>
           <h2 className="text-3xl sm:text-4xl font-bold text-primary">
-            {t('hours.title')} {t('hours.subtitle')} y ubicación
+            Horario, Ubicación y Contacto
           </h2>
         </div>
 
