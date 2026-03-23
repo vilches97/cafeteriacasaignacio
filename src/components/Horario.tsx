@@ -11,11 +11,15 @@ const Horario = () => {
       <div className="container-narrow">
         <div className="text-center mb-14 fade-up">
           <span className="text-cafe-olive text-sm font-semibold uppercase tracking-widest mb-3 block">
-            Información de contacto
+            Visítanos
           </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-primary">
-            Horario, Ubicación y Contacto
+          <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">
+            Horario y Ubicación
           </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Ven a disfrutar de nuestros desayunos tradicionales en el corazón de Martos. 
+            Estamos aquí para ti cada mañana.
+          </p>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
