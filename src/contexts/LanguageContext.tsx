@@ -133,6 +133,24 @@ const translations: Translations = {
   'menu.call_button': { es: 'Llamar por teléfono', en: 'Call by phone' },
   'menu.call_phone': { es: 'Teléfono:', en: 'Phone:' },
 
+  // Allergens
+  'allergen.1': { es: 'Cereales con gluten', en: 'Cereals containing gluten' },
+  'allergen.2': { es: 'Crustáceos', en: 'Crustaceans' },
+  'allergen.3': { es: 'Huevos', en: 'Eggs' },
+  'allergen.4': { es: 'Pescado', en: 'Fish' },
+  'allergen.5': { es: 'Cacahuetes', en: 'Peanuts' },
+  'allergen.6': { es: 'Soja', en: 'Soybeans' },
+  'allergen.7': { es: 'Leche y derivados', en: 'Milk and dairy products' },
+  'allergen.8': { es: 'Frutos de cáscara', en: 'Nuts' },
+  'allergen.9': { es: 'Apio', en: 'Celery' },
+  'allergen.10': { es: 'Mostaza', en: 'Mustard' },
+  'allergen.11': { es: 'Sésamo', en: 'Sesame' },
+  'allergen.12': { es: 'Sulfitos', en: 'Sulphites' },
+  'allergen.13': { es: 'Altramuces', en: 'Lupin' },
+  'allergen.14': { es: 'Moluscos', en: 'Molluscs' },
+  'allergen.title': { es: 'Alérgenos', en: 'Allergens' },
+  'allergen.legend': { es: 'Contiene alérgenos:', en: 'Contains allergens:' },
+
   // Reviews Section
   'reviews.title': { es: 'Lo que dicen de nosotros', en: 'What they say about us' },
   'reviews.subtitle': { es: 'Opiniones de nuestros clientes', en: 'Customer Reviews' },
