@@ -1,4 +1,4 @@
-import { Coffee, MessageCircle } from "lucide-react";
+import { Coffee, Phone } from "lucide-react";
 import { useTranslation } from "@/contexts/LanguageContext";
 
 interface MenuItem {
@@ -148,31 +148,29 @@ const Carta = () => {
           ))}
         </div>
 
-        {/* WhatsApp Order Section */}
+        {/* Phone Order Section */}
         <div className="mt-16 text-center">
           <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-950/20 rounded-2xl p-8 border border-green-200/50 dark:border-green-800/30">
             <div className="flex justify-center mb-4">
               <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center">
-                <MessageCircle className="w-8 h-8 text-white" />
+                <Phone className="w-8 h-8 text-white" />
               </div>
             </div>
             <h3 className="text-2xl font-bold text-primary mb-3">
-              {t('menu.whatsapp_title')}
+              {t('menu.call_title')}
             </h3>
             <p className="text-muted-foreground mb-6 max-w-md mx-auto">
-              {t('menu.whatsapp_subtitle')}
+              {t('menu.call_subtitle')}
             </p>
             <a
-              href="https://wa.me/34647971023?text=¡Hola!%20Quiero%20hacer%20un%20pedido%20para%20recoger"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="tel:+34647971023"
               className="inline-flex items-center gap-2 px-6 py-3 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-lg transition-all active:scale-[0.97] shadow-lg hover:shadow-xl"
             >
-              <MessageCircle className="w-5 h-5" />
-              {t('menu.whatsapp_button')}
+              <Phone className="w-5 h-5" />
+              {t('menu.call_button')}
             </a>
             <p className="text-sm text-muted-foreground mt-4">
-              {t('menu.whatsapp_phone')} 647 971 023
+              {t('menu.call_phone')} 647 971 023
             </p>
           </div>
         </div>
