@@ -129,7 +129,7 @@ const translations: Translations = {
   'menu.carta_title': { es: 'Carta de desayunos', en: 'Breakfast Menu' },
   'menu.carta_subtitle': { es: 'Todo lo que necesitas para empezar el día con energía', en: 'Everything you need to start the day with energy' },
   'menu.call_title': { es: '¿Hacemos tu pedido?', en: 'Ready to order?' },
-  'menu.call_subtitle': { es: 'Llámanos y recoge tu desayuno cuando quieras. Te lo preparamos en cuanto llegues.', en: 'Call us and pick up your breakfast anytime. We\'ll prepare it as soon as you arrive.' },
+  'menu.call_subtitle': { es: 'Llámanos y recoge tu desayuno cuando quieras.', en: 'Call us and pick up your breakfast anytime.' },
   'menu.call_button': { es: 'Llamar por teléfono', en: 'Call by phone' },
   'menu.call_phone': { es: 'Teléfono:', en: 'Phone:' },
 
