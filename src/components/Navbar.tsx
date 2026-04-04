@@ -71,14 +71,14 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden bg-background/98 backdrop-blur-sm border-t border-border">
+        <div className="md:hidden bg-background border-t border-border shadow-lg">
           <ul className="flex flex-col py-4 px-6 gap-1">
             {navLinks.map((l) => (
               <li key={l.href}>
                 <a
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="block py-3 text-foreground font-medium text-sm border-b border-border/50"
+                  className="block py-3 text-foreground font-medium text-sm border-b border-border/50 hover:bg-muted/50 transition-colors rounded"
                 >
                   {t(l.labelKey)}
                 </a>
