@@ -1,5 +1,6 @@
 import { Coffee, Phone } from "lucide-react";
 import { useTranslation } from "@/contexts/LanguageContext";
+import AllergenIcon from "./AllergenIcon";
 
 interface MenuItem {
   name: string;
@@ -115,33 +116,16 @@ const Carta = () => {
   const getAllergenDisplay = (allergens?: string[]) => {
     if (!allergens || allergens.length === 0) return null;
     
-    const allergenIcons: { [key: string]: string } = {
-      '1': '🌾', // Cereales con gluten
-      '2': '🦐', // Crustáceos
-      '3': '🥚', // Huevos
-      '4': '🐟', // Pescado
-      '5': '🥜', // Cacahuetes
-      '6': '🫘', // Soja
-      '7': '🥛', // Leche
-      '8': '🌰', // Frutos de cáscara
-      '9': '🌿', // Apio
-      '10': '🌾', // Mostaza
-      '11': '🫘', // Sésamo
-      '12': '⚠️', // Sulfitos
-      '13': '🌿', // Altramuces
-      '14': '🐚', // Moluscos
-    };
-    
     return (
       <div className="flex flex-wrap gap-1 mt-2">
         {allergens.map((code) => (
-          <span
+          <div
             key={code}
-            className="inline-flex items-center justify-center w-7 h-7 bg-orange-100 text-orange-700 text-lg rounded-full border border-orange-200"
+            className="relative group"
             title={t(`allergen.${code}`)}
           >
-            {allergenIcons[code] || code}
-          </span>
+            <AllergenIcon code={code} className="w-7 h-7" />
+          </div>
         ))}
       </div>
     );
@@ -197,18 +181,12 @@ const Carta = () => {
               {t('allergen.legend')}
             </p>
             <div className="flex flex-wrap justify-center gap-3 text-xs">
-              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map((code) => {
-                const allergenIcons: { [key: string]: string } = {
-                  '1': '🌾', '2': '🦐', '3': '🥚', '4': '🐟', '5': '🥜', '6': '🫘', '7': '🥛',
-                  '8': '🌰', '9': '🌿', '10': '🌾', '11': '🫘', '12': '⚠️', '13': '🌿', '14': '🐚'
-                };
-                return (
-                  <div key={code} className="flex items-center gap-2 bg-white/50 px-3 py-2 rounded-lg border border-border/30">
-                    <span className="text-lg">{allergenIcons[code.toString()]}</span>
-                    <span className="text-muted-foreground text-xs">{t(`allergen.${code}`)}</span>
-                  </div>
-                );
-              })}
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map((code) => (
+                <div key={code} className="flex items-center gap-2 bg-white/50 px-3 py-2 rounded-lg border border-border/30">
+                  <AllergenIcon code={code.toString()} className="w-6 h-6" />
+                  <span className="text-muted-foreground text-xs">{t(`allergen.${code}`)}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
