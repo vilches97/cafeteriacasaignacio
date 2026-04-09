@@ -93,11 +93,11 @@ const menuData: MenuCategory[] = [
     icon: "🥤",
     titleKey: "menu.bebidas_frias",
     items: [
-      { name: "menu.refrescos", desc: "2.50€" },
+      { name: "menu.refrescos", desc: "2.40€" },
       { name: "menu.zumos", desc: "2.50€" },
       { name: "menu.cerveza", desc: "2.60€", allergens: ["1"] },
       { name: "menu.botellin", desc: "1.90€", allergens: ["1"] },
-      { name: "menu.copas", desc: "2.40€" },
+      { name: "menu.copas", desc: "2.50€" },
     ],
   },
   {

@@ -2,6 +2,8 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { Star, Send } from "lucide-react";
 import { useState } from "react";
 import { useTranslation } from "@/contexts/LanguageContext";
+import emailjs from '@emailjs/browser';
+import { EMAILJS_CONFIG } from "@/config/emailjs";
 
 interface Review {
   name: string;
@@ -32,6 +34,45 @@ const Opiniones = () => {
   const ref = useScrollReveal();
   const [form, setForm] = useState({ nombre: "", opinion: "", stars: 5 });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  const sendEmail = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!form.nombre || !form.opinion) {
+      setError("Por favor, completa todos los campos");
+      return;
+    }
+
+    setLoading(true);
+    setError("");
+
+    try {
+      const templateParams = {
+        from_name: form.nombre,
+        message: form.opinion,
+        rating: form.stars,
+        to_email: EMAILJS_CONFIG.TO_EMAIL,
+      };
+
+      await emailjs.send(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_CONFIG.TEMPLATE_ID,
+        templateParams,
+        EMAILJS_CONFIG.PUBLIC_KEY
+      );
+
+      setSubmitted(true);
+      setForm({ nombre: "", opinion: "", stars: 5 });
+      setTimeout(() => setSubmitted(false), 4000);
+    } catch (err) {
+      setError("Error al enviar la opinión. Por favor, inténtalo de nuevo.");
+      console.error("EmailJS error:", err);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <section id="opiniones" className="section-padding bg-cafe-cream" ref={ref}>
@@ -124,19 +165,28 @@ const Opiniones = () => {
               
               <button
                 type="submit"
-                onClick={(e) => {
-                  e.preventDefault();
-                  if (form.nombre && form.opinion) {
-                    setSubmitted(true);
-                    setForm({ nombre: "", opinion: "", stars: 5 });
-                    setTimeout(() => setSubmitted(false), 4000);
-                  }
-                }}
-                className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-lg hover:opacity-90 transition-opacity active:scale-[0.97] text-sm"
+                onClick={sendEmail}
+                disabled={loading}
+                className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-lg hover:opacity-90 transition-opacity active:scale-[0.97] text-sm disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                <Send className="w-4 h-4" />
-                {t('reviews.send_review')}
+                {loading ? (
+                  <>
+                    <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                    Enviando...
+                  </>
+                ) : (
+                  <>
+                    <Send className="w-4 h-4" />
+                    {t('reviews.send_review')}
+                  </>
+                )}
               </button>
+              
+              {error && (
+                <p className="text-red-500 font-medium text-sm mt-3 text-center">
+                  {error}
+                </p>
+              )}
               
               {submitted && (
                 <p className="text-cafe-olive font-medium text-sm mt-3 text-center">
