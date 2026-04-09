@@ -7,11 +7,29 @@ import tostadasPicadilloImg from "@/assets/tostadas-picadillo.png";
 import tartaChocolateImg from "@/assets/tarta-chocolate.png";
 import chocolateCalienteImg from "@/assets/chocolate-caliente.png";
 import hijasIgnacioImg from "@/assets/hijas-ignacio.png";
+import foto1Img from "@/assets/1.jpg";
+import foto2Img from "@/assets/2.jpg";
+import foto3Img from "@/assets/3.jpg";
+import foto4Img from "@/assets/4.jpg";
+import foto5Img from "@/assets/5.jpg";
+import foto6Img from "@/assets/6.jpg";
+import foto7Img from "@/assets/7.jpg";
+import foto8Img from "@/assets/8.jpg";
+import foto9Img from "@/assets/9.jpg";
 
 const images = [
   { src: hijasIgnacioImg, alt: "Las hijas de Ignacio, al frente de la cafetería" },
   { src: tostadaGratinadaImg, alt: "Tostada gratinada con café con leche" },
   { src: tostadasPicadilloImg, alt: "Tostadas de picadillo con zumo de naranja" },
+  { src: foto1Img, alt: "Especialidad de la casa" },
+  { src: foto2Img, alt: "Desayuno tradicional" },
+  { src: foto3Img, alt: "Tostas gourmet" },
+  { src: foto4Img, alt: "Café especial" },
+  { src: foto5Img, alt: "Postre casero" },
+  { src: foto6Img, alt: "Ambiente acogedor" },
+  { src: foto7Img, alt: "Detalle del menú" },
+  { src: foto8Img, alt: "Producto fresco" },
+  { src: foto9Img, alt: "Momento especial" },
   { src: interiorImg, alt: "Salón del café con fotos y ambiente familiar" },
   { src: tartaChocolateImg, alt: "Tarta de chocolate casera con nata" },
   { src: chocolateCalienteImg, alt: "Chocolate caliente con nata montada" },
