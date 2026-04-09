@@ -7,15 +7,11 @@ import tostadasPicadilloImg from "@/assets/tostadas-picadillo.png";
 import tartaChocolateImg from "@/assets/tarta-chocolate.png";
 import chocolateCalienteImg from "@/assets/chocolate-caliente.png";
 import hijasIgnacioImg from "@/assets/hijas-ignacio.png";
-import tostadaTomateImg from "@/assets/tostada-tomate.jpg";
-import tostadaClasicasImg from "@/assets/tostadas-clasicas.png";
 
 const images = [
   { src: hijasIgnacioImg, alt: "Las hijas de Ignacio, al frente de la cafetería" },
   { src: tostadaGratinadaImg, alt: "Tostada gratinada con café con leche" },
   { src: tostadasPicadilloImg, alt: "Tostadas de picadillo con zumo de naranja" },
-  { src: tostadaTomateImg, alt: "Tostada con tomate, queso fundido y anchoas" },
-  { src: tostadaClasicasImg, alt: "Tostadas clásicas con ingredientes variados" },
   { src: interiorImg, alt: "Salón del café con fotos y ambiente familiar" },
   { src: tartaChocolateImg, alt: "Tarta de chocolate casera con nata" },
   { src: chocolateCalienteImg, alt: "Chocolate caliente con nata montada" },
