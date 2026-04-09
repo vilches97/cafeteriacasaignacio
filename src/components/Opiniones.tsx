@@ -50,25 +50,29 @@ const Opiniones = () => {
 
     try {
       const templateParams = {
-        from_name: form.nombre,
+        name: form.nombre,
         message: form.opinion,
         rating: form.stars,
-        to_email: EMAILJS_CONFIG.TO_EMAIL,
+        email: EMAILJS_CONFIG.TO_EMAIL,
       };
 
-      await emailjs.send(
+      // Initialize EmailJS with the public key
+      emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
+      
+      const result = await emailjs.send(
         EMAILJS_CONFIG.SERVICE_ID,
         EMAILJS_CONFIG.TEMPLATE_ID,
-        templateParams,
-        EMAILJS_CONFIG.PUBLIC_KEY
+        templateParams
       );
+      
+      console.log("EmailJS success:", result);
 
       setSubmitted(true);
       setForm({ nombre: "", opinion: "", stars: 5 });
       setTimeout(() => setSubmitted(false), 4000);
     } catch (err) {
-      setError("Error al enviar la opinión. Por favor, inténtalo de nuevo.");
-      console.error("EmailJS error:", err);
+      console.error("EmailJS detailed error:", err);
+      setError(`Error: ${err.text || err.message || 'Error al enviar la opinión'}`);
     } finally {
       setLoading(false);
     }
