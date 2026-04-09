@@ -14,6 +14,7 @@ const translations: Translations = {
   'nav.desayunos': { es: 'Desayunos', en: 'Breakfast' },
   'nav.nosotros': { es: 'Nosotros', en: 'About' },
   'nav.carta': { es: 'Carta', en: 'Menu' },
+  'nav.galeria': { es: 'Galería', en: 'Gallery' },
   'nav.opiniones': { es: 'Opiniones', en: 'Reviews' },
   'nav.horario': { es: 'Horario', en: 'Hours' },
   'nav.contacto': { es: 'Contacto', en: 'Contact' },

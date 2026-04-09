@@ -8,6 +8,7 @@ const navLinks = [
   { labelKey: "nav.desayunos", href: "#desayunos" },
   { labelKey: "nav.nosotros", href: "#nosotros" },
   { labelKey: "nav.carta", href: "#carta" },
+  { labelKey: "nav.galeria", href: "#galeria" },
   { labelKey: "nav.opiniones", href: "#opiniones" },
   { labelKey: "nav.horario", href: "#horario" },
   { labelKey: "nav.contacto", href: "#contacto" },
